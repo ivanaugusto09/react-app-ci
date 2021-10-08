@@ -60,7 +60,6 @@ jobs:
         run: npx surge --project ./build --domain real-leg.surge.sh
       - name: Upload Coverage Results
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        run: npx codecov 
+        run: npx codecov
         env:
           CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
-        
